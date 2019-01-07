@@ -25,7 +25,21 @@ $factory->define(App\User::class, function (Faker $faker) {
     ];
 });
 
+$factory->define(App\Client::class, function (Faker $faker) {
+    $firstName = $faker->firstName;
+    return [
 
+        'title' => $faker->title(),
+        'name' => $firstName,
+        'last_name' => $faker->lastName,
+        'address' => $faker->streetAddress,
+        'zip_code' => $faker->postcode ,
+        'city' => $faker->city,
+        'state' => $faker->state,
+        'email' => $faker->unique()->safeEmail,
+       
+    ];
+});
 
 
 
